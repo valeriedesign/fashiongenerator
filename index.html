@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fashion Outfit Generator</title>
+  style.css
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1>Fashion Outfit Generator</h1>
+        <p class="sub">
+          Generuje sladěné outfity podle pravidel. Volitelně zamkneš kus ze svého šatníku a dostaneš 2 kombinace.
+        </p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <button id="btnGenerate" class="btn primary">Generovat outfit</button>
+        <button id="btnReset" class="btn ghost">Reset</button>
+
+        <div class="spacer"></div>
+
+        <button id="btnHistory" class="btn">Historie</button>
+        <button id="btnFavorites" class="btn">Favority</button>
+      </div>
+
+      <div class="filter">
+        <div class="filterTitle">Filtr: mám v šatníku</div>
+
+        <div class="filterRow">
+          <label class="field">
+            <span>Kategorie</span>
+            <select id="ownedCategory">
+              <option value="">— bez filtru —</option>
+              <option value="pants">Kalhoty</option>
+              <option value="skirts">Sukně</option>
+              <option value="tshirts">Trička</option>
+              <option value="shirts">Košile</option>
+              <option value="blazers">Sako</option>
+            </select>
+          </label>
+
+          <div class="swatchBlock">
+            <div class="swatchLabel">Barva</div>
+            <div id="ownedSwatches" class="swatches" aria-label="Výběr barvy"></div>
+            <div class="swatchHint">Klikni na barvu. Pak generátor udělá <b>2 outfity</b>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="resultsHead">
+        <h2>Výsledky</h2>
+        <div id="statusPills" class="pills"></div>
+      </div>
+
+      <div id="outfits" class="outfits"></div>
+
+      <div id="emptyState" class="empty">
+        Zatím nic. Klikni na <b>Generovat outfit</b>.
+      </div>
+    </section>
+
+    <!-- Drawer / panel -->
+    <div id="drawerBackdrop" class="backdrop hidden"></div>
+    <aside id="drawer" class="drawer hidden" aria-hidden="true">
+      <div class="drawerHead">
+        <div class="drawerTitle" id="drawerTitle">Historie</div>
+        <button id="btnCloseDrawer" class="iconBtn" aria-label="Zavřít">✕</button>
+      </div>
+
+      <div class="drawerBody">
+        <div id="drawerContent"></div>
+      </div>
+
+      <div class="drawerFooter">
+        <button id="btnClearHistory" class="btn ghost danger hidden">Vymazat historii</button>
+        <button id="btnClearFavorites" class="btn ghost danger hidden">Vymazat favority</button>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <small>
+        Tip: Přidej do <code>/assets</code> 1–2 fotky na barvu pro každou kategorii. Chybějící obrázky se zobrazí placeholderem.
+      </small>
+    </footer>
+  </div>
+
+  script.js</script>
+</body>
+</html>
